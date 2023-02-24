@@ -1,13 +1,13 @@
 import { PostgresDatabaseProviderModule } from "@/providers/database/postgres/provider.module";
 import { Module } from "@nestjs/common";
 import { ConfigModule } from "@nestjs/config";
+import { TokenModule } from "./modules/createToken/create-token.module";
 import { SubscriberModule } from "./modules/subscriber/subscriber.module";
 
 @Module({
   imports: [
-
     PostgresDatabaseProviderModule,
-
+    TokenModule,
     SubscriberModule,
     ConfigModule.forRoot({
       isGlobal: true,

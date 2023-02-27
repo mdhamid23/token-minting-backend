@@ -12,19 +12,25 @@ export class Token {
   token_symbol: string;
 
   @Column()
-  decimals:number;
+  decimals: number;
 
   @Column()
-  set_supply_cap:number
+  set_supply_cap: number;
 
   @Column()
-  initial_supply:number;
+  initial_supply: number;
 
   @Column()
-  wallet_address:string;
+  wallet_address: string;
 
   @Column()
-  contract_address:string;
+  contract_address: string;
+
+  @Column()
+  mintable: boolean;
+
+  @Column()
+  burnable: boolean;
 
   @Column({
     type: "timestamp",

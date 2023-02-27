@@ -1,4 +1,4 @@
-import { IsOptional } from "class-validator";
+import { IsNotEmpty, IsOptional } from "class-validator";
 
 export class CreateTokenDto {
   @IsOptional()
@@ -8,19 +8,25 @@ export class CreateTokenDto {
   token_symbol?: string;
 
   @IsOptional()
-  decimals?:number;
+  decimals?: number;
 
   @IsOptional()
-  set_supply_cap:number;
+  set_supply_cap: number;
 
   @IsOptional()
-  initial_supply:number
+  initial_supply: number;
 
   @IsOptional()
-  wallet_address:string;
+  wallet_address: string;
 
   @IsOptional()
-  contract_address:string;
+  contract_address: string;
+
+  @IsNotEmpty()
+  mintable: boolean;
+
+  @IsNotEmpty()
+  burnable: boolean;
 
   @IsOptional()
   updated_at?: Date;
